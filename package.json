@@ -1,0 +1,25 @@
+{
+  "name": "pay-api",
+  "version": "1.0.0",
+  "description": "pay",
+  "main": "bin/starter.js",
+  "scripts": {
+    "test": "node bin/starter.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-xml-bodyparser": "^0.3.0",
+    "moment": "^2.24.0",
+    "mongoose": "^5.4.19",
+    "morgan": "^1.9.1",
+    "redis": "^2.8.0",
+    "redlock": "^3.1.2",
+    "request": "^2.88.0",
+    "uuid": "^3.3.2",
+    "xml2js": "^0.4.19"
+  }
+}

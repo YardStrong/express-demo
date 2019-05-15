@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<link rel="shortcut icon" href="favicon.ico">
+<title>！！！</title>
+</head>
+<body>
+<h1 style="text-align:center">☣攻击警告☣</h1>
+<h2 style="text-align:center">Waring for Network Attack</h2>
+<div style="text-align:center">
+    <textarea id="print-box" rows="2" cols="80" style="text-align:center;overflow-y:hidden;resize:none;border:none"></textarea>
+</div>
+</body>
+<script>
+(function() {
+    var array = [
+        '系统判定这是一次恶意攻击',
+        '你的账户信息将被采集',
+        '你的IP将被加入监控名单',
+        '请注重文明上网',
+        '网页即将跳转',
+        '... ...'
+    ];
+    var printBuffer = [];
+    var printBox = document.getElementById('print-box');
+    let rowsNum = printBox.rows;
+    var printTime = setInterval(function() {
+        if(array.length == 0) {
+            setTimeout(function () {
+                window.location.href = 'http://www.baidu.com';
+            }, 512);
+            return window.clearInterval(printTime);
+        }
+
+        if(printBuffer.length >= rowsNum) {
+            printBuffer.shift();
+        }
+        printBuffer.push(array.shift());
+        let printData = '';
+        printBuffer.forEach(function(value) {
+            printData += value + '\n';
+        });
+        printBox.value = printData;
+    }, 512);
+})()
+</script>
+</html>
